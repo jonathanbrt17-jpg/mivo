@@ -4,35 +4,118 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MIVO — Urgence</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#000814;color:white;min-height:100vh;overflow-x:hidden;position:relative;}
-.header{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background: rgba(0,0,0,0.6);position: sticky; top:0;backdrop-filter: blur(10px); z-index:10;}
-.header .logo{width:60px;}
-.header-text h1{font-size:28px;color:#00c6ff;}
-.header-text p{font-size:14px;color:#a0eaff;}
-.header nav a{color:white;margin-left:20px;text-decoration:none;font-weight:600;position:relative;transition:0.3s;}
-.header nav a::after{content:'';position:absolute;width:0;height:2px;background:#00c6ff;left:0;bottom:-5px;transition:0.3s;}
-.header nav a:hover::after{width:100%;}
-main{max-width:900px;margin:80px auto 50px auto;padding:0 20px;text-align:left;animation:fadeIn 1s ease forwards; opacity:0;}
-main h2{font-size:36px;margin-bottom:20px;color:#ff4e42;text-shadow:0 0 8px #ff4e42;text-align:center;}
-main h3{color:#00ffaa;margin-top:15px;}
-main p{margin-bottom:12px;font-size:16px;}
-.urgence-box{background: rgba(0,12,34,0.5); padding:15px 20px; border-radius:12px; margin:20px 0; border:1px solid #00c6ff44;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
 
-/* Animation fade */
-@keyframes fadeIn{from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);}}
+body{
+  background:#000814;
+  color:white;
+  min-height:100vh;
+  overflow-x:hidden;
+  position:relative;
+}
 
-/* Footer */
-.footer{text-align:center;padding:30px;color:#a0eaff;border-top:1px solid #00c6ff33;}
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 50px;
+  background:rgba(0,0,0,0.6);
+  position:sticky;
+  top:0;
+  backdrop-filter:blur(10px);
+}
 
-/* Stars */
-.star{position:absolute;border-radius:50%;background:white;opacity:0.7;animation:twinkle infinite alternate;}
-@keyframes twinkle{from{opacity:0.2;} to{opacity:0.9;}}
+.logo{width:60px;}
 
-/* Responsive */
-@media(max-width:768px){.header{flex-direction:column;gap:15px;} main h2{font-size:28px;} main p{font-size:14px;}}
+.header-text h1{color:#00c6ff;}
+.header-text p{color:#a0eaff;font-size:14px;}
+
+nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+nav a:hover{color:#00c6ff;}
+
+nav .don{color:#00ffaa;}
+nav .urgence{color:#ff4e42;}
+
+main{
+  max-width:900px;
+  margin:80px auto 50px auto;
+  padding:0 20px;
+  animation:fadeIn 1s ease forwards;
+  opacity:0;
+}
+
+main h2{
+  font-size:36px;
+  margin-bottom:20px;
+  color:#ff4e42;
+  text-align:center;
+}
+
+main h3{
+  color:#00ffaa;
+  margin-top:20px;
+}
+
+main p{
+  margin-bottom:12px;
+  font-size:16px;
+  line-height:1.6;
+}
+
+.urgence-box{
+  background:rgba(0,12,34,0.6);
+  padding:18px 22px;
+  border-radius:12px;
+  margin:20px 0;
+  border:1px solid #00c6ff44;
+}
+
+.footer{
+  text-align:center;
+  padding:30px;
+  border-top:1px solid #00c6ff33;
+  color:#a0eaff;
+}
+
+.star{
+  position:absolute;
+  background:white;
+  border-radius:50%;
+  opacity:0.6;
+  animation:twinkle infinite alternate;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes twinkle{
+  from{opacity:0.2;}
+  to{opacity:0.8;}
+}
+
+@media(max-width:768px){
+  .header{flex-direction:column;gap:15px;}
+  main h2{font-size:28px;}
+  main p{font-size:14px;}
+}
 </style>
 </head>
 
@@ -50,11 +133,12 @@ main p{margin-bottom:12px;font-size:16px;}
     <a href="info.html">Infos</a>
     <a href="services.html">Services</a>
     <a href="contact.html">Contact</a>
-    <a href="don.html">Faire un don</a>
+    <a href="don.html" class="don">Faire un don</a>
+    <a href="urgence.html" class="urgence">⚠️ Urgence</a>
   </nav>
 </header>
 
-<main class="container">
+<main>
   <h2>📞 Numéros d’urgence</h2>
   <p>Si toi ou quelqu’un que tu connais est en danger, contacte immédiatement un service d’urgence.</p>
 
@@ -65,31 +149,30 @@ main p{margin-bottom:12px;font-size:16px;}
 
   <div class="urgence-box">
     <h3>💬 Harcèlement & Cyberharcèlement</h3>
-    <p><strong>📱 3018 — Numéro national</strong><br>Pour le harcèlement scolaire et le cyberharcèlement.<br><em>Gratuit – 7j/7 – 9h à 23h</em></p>
-    <p><strong>🌐 Application & Chat : 3018.fr</strong></p>
+    <p><strong>📱 3018</strong> — Gratuit – 7j/7 – 9h à 23h</p>
+    <p><strong>🌐 3018.fr</strong></p>
   </div>
 
   <div class="urgence-box">
     <h3>🧠 Santé mentale & détresse psychologique</h3>
-    <p><strong>📞 3114 — Prévention suicide</strong><br>Ligne nationale de soutien, écoute spécialisée.<br><em>Gratuit – 24h/24 – 7j/7</em></p>
-    <p><strong>📞 0 800 858 858 — SOS Suicide</strong></p>
-    <p><strong>📞 0 800 235 236 — Numéro Psy Jeunes</strong><br>Soutien et orientation pour les jeunes.</p>
+    <p><strong>📞 3114</strong> — Prévention suicide – 24h/24 – 7j/7</p>
+    <p><strong>📞 0 800 858 858</strong> — SOS Suicide</p>
+    <p><strong>📞 0 800 235 236</strong> — Numéro Psy Jeunes</p>
   </div>
 
   <div class="urgence-box">
-    <h3>🚨 En cas de danger immédiat</h3>
-    <p><strong>📞 112 — Urgences Européennes</strong></p>
-    <p><strong>📞 15 — SAMU</strong></p>
-    <p><strong>📞 17 — Police</strong></p>
-    <p><strong>📞 18 — Pompiers</strong></p>
+    <h3>🚨 Danger immédiat</h3>
+    <p>📞 112 — Urgences Européennes</p>
+    <p>📞 15 — SAMU</p>
+    <p>📞 17 — Police</p>
+    <p>📞 18 — Pompiers</p>
   </div>
 
   <div class="urgence-box">
-    <h3>🛑 Violences physiques, sexuelles ou conjugales</h3>
-    <p><strong>📞 3919 — Violences Femmes Info</strong><br>Gratuit & anonyme</p>
-    <p><strong>📞 119 — Allô Enfance en Danger</strong></p>
+    <h3>🛑 Violences</h3>
+    <p>📞 3919 — Violences Femmes Info</p>
+    <p>📞 119 — Allô Enfance en Danger</p>
   </div>
-
 </main>
 
 <footer class="footer">
@@ -97,12 +180,11 @@ main p{margin-bottom:12px;font-size:16px;}
 </footer>
 
 <script>
-// Stars animation
-const starCount=80;
+const starCount=60;
 for(let i=0;i<starCount;i++){
-  let star=document.createElement('div');
-  star.classList.add('star');
-  star.style.width=star.style.height=Math.random()*2+1+'px';
+  const star=document.createElement('div');
+  star.className='star';
+  star.style.width=star.style.height=(Math.random()*2+1)+'px';
   star.style.top=Math.random()*100+'vh';
   star.style.left=Math.random()*100+'vw';
   star.style.animationDuration=(Math.random()*3+2)+'s';
