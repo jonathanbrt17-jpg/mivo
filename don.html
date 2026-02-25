@@ -6,8 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
-
+<script 
+  src="https://www.paypal.com/sdk/js?client-id=BAA26VKvbu73gOnc3JYsyXnHTOTX5QL7_OAjs-k5uadJjBqQjRYySUVYOueEGTgeU_HlBJExtfLpG0r2fg&components=hosted-buttons&disable-funding=venmo&currency=EUR">
+</script>
 <body>
+  <div id="paypal-container-VT7KVWRRTUSRE"></div>
+<script>
+  paypal.HostedButtons({
+    hostedButtonId: "VT7KVWRRTUSRE",
+  }).render("#paypal-container-VT7KVWRRTUSRE")
+</script>
 
 <header class="header">
   <img src="mivo.png" alt="Logo MIVO" class="logo">
@@ -50,25 +58,6 @@
       <strong>Votre geste peut réellement tout changer.</strong>
     </p>
 
-    <!-- BOUTON DE DON -->
-    <div style="text-align:center; margin-top:30px;">
-      <a
-        href="https://gofund.me/594f04b5b"
-        class="btn-big"
-        style="
-          background:#0077ff;
-          color:white;
-          padding:18px 30px;
-          font-size:1.3rem;
-          border-radius:8px;
-          text-decoration:none;
-          display:inline-block;
-          font-weight:bold;
-        "
-        target="_blank"
-      >
-        💙 Faire un don
-      </a>
     </div>
 
   </section>
