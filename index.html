@@ -3,24 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MIVO — Accueil</title>
+<title>MIVO — Informations</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
 body{
   background:#000814;
   color:white;
   min-height:100vh;
   overflow-x:hidden;
-  position:relative;
 }
 
 .header{
@@ -28,13 +22,125 @@ body{
   justify-content:space-between;
   align-items:center;
   padding:20px 50px;
-  background:rgba(0,0,0,0.4); /* léger flou / transparence */
-  backdrop-filter: blur(8px); /* flou derrière le header */
+  background:rgba(0,0,0,0.6);
   position:sticky;
   top:0;
-  z-index:1000;
+  backdrop-filter:blur(10px);
 }
 
+.header .logo{width:60px;}
+
+.header-text h1{color:#00c6ff;}
+.header-text p{color:#a0eaff;font-size:14px;}
+
+nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+nav a:hover{color:#00c6ff;}
+
+main{
+  max-width:900px;
+  margin:80px auto;
+  padding:0 20px;
+}
+
+main h2{
+  text-align:center;
+  font-size:34px;
+  margin-bottom:40px;
+  color:#00c6ff;
+}
+
+.service-box{
+  background:rgba(0,198,255,0.08);
+  padding:20px;
+  border-radius:20px;
+  margin-bottom:20px;
+  border:1px solid #00c6ff55;
+  box-shadow:0 0 15px #00c6ff22;
+  transition:0.3s;
+}
+
+.service-box:hover{
+  transform:scale(1.02);
+  box-shadow:0 0 25px #00c6ff55;
+}
+
+.service-box ul{
+  margin-top:10px;
+  padding-left:20px;
+}
+
+.footer{
+  text-align:center;
+  padding:30px;
+  border-top:1px solid #00c6ff33;
+  color:#a0eaff;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <img src="mivo.png" alt="Logo MIVO" class="logo">
+  <div class="header-text">
+    <h1>MIVO</h1>
+    <p>Parler, c’est déjà guérir.</p>
+  </div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="info.html">Informations</a>
+    <a href="contact.html">Contact</a>
+    <a href="don.html">Faire un don</a>
+    <a href="urgence.html">⚠️ Urgence</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Nos Informations</h2>
+
+  <div class="service-box">
+    <p>🚧 Maintenance Importante du Site MIVO 🚧</p>
+  </div>
+
+  <div class="service-box">
+    <p>MIVO a été créée pour t’aider, te soutenir et te donner les bonnes ressources pour t’informer et te protéger.</p>
+  </div>
+
+  <div class="service-box">
+    <p>Mise à jour v0.1 — Dernière mise à jour : 17 décembre 2025</p>
+  </div>
+
+  <div class="service-box">
+    <p>🛡️ Conseils pour te protéger :</p>
+    <ul>
+      <li>Ne reste jamais seul(e) face à une situation dangereuse.</li>
+      <li>Garde les preuves (captures, messages, mails).</li>
+      <li>Parle à un adulte de confiance.</li>
+      <li>Bloque et signale l’auteur si possible.</li>
+      <li>En cas d’urgence, utilise le bouton Urgence.</li>
+    </ul>
+  </div>
+
+  <div class="service-box">
+    <p>Blog — Message du fondateur :</p>
+    <p>Bonjour à tous et toutes. MIVO avance petit à petit. Le site et le numéro sont désormais actifs. Merci de nous signaler tout bug par mail à : mivoasso@proton.me</p>
+  </div>
+
+</main>
+
+<footer class="footer">
+  © 2025 - MIVO. Tous droits réservés.
+</footer>
+
+</body>
+</html>
 .logo{width:60px;}
 
 .header-text{
