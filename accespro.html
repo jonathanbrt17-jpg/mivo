@@ -9,7 +9,7 @@
 body{
   background:#000814;
   color:white;
-  font-family:Arial, sans-serif;
+  font-family:'Poppins', sans-serif;
   margin:0;
   padding:20px;
 }
@@ -26,6 +26,7 @@ body{
   padding:8px 15px;
   border-radius:8px;
   cursor:pointer;
+  font-weight:bold;
 }
 
 .clock{
@@ -34,17 +35,23 @@ body{
 }
 
 .container{
-  max-width:600px;
+  max-width:800px;
   margin:40px auto;
   text-align:center;
 }
 
-textarea, input{
+input, textarea{
   width:100%;
   padding:12px;
   border-radius:10px;
   border:none;
   margin-top:15px;
+  font-size:16px;
+}
+
+textarea{
+  height:250px;
+  resize:none;
 }
 
 button{
@@ -55,6 +62,7 @@ button{
   background:#00c6ff;
   color:white;
   cursor:pointer;
+  font-weight:bold;
 }
 
 .hidden{display:none;}
@@ -69,20 +77,20 @@ button{
 </div>
 
 <div class="container" id="loginBox">
-  <h2>Accès Pro</h2>
+  <h2>🔐 Accès Pro</h2>
   <p>Entrez le code :</p>
   <input type="password" id="codeInput">
   <button onclick="checkCode()">Entrer</button>
 </div>
 
 <div class="container hidden" id="editorBox">
-  <h2>Espace Pro</h2>
+  <h2>📝 Espace Pro</h2>
 
   <input type="email" id="recipientEmail" placeholder="Mail du destinataire">
 
   <textarea id="textArea" placeholder="Écrivez votre message ici..."></textarea>
 
-  <button onclick="sendEmail()">Envoyer le mail</button>
+  <button onclick="sendEmail()">📧 Envoyer le mail</button>
 </div>
 
 <script>
@@ -93,14 +101,32 @@ function checkCode(){
   if(input === SECRET_CODE){
     document.getElementById("loginBox").classList.add("hidden");
     document.getElementById("editorBox").classList.remove("hidden");
+    loadText();
   } else {
     alert("Code incorrect");
   }
 }
 
+/* Sauvegarde automatique */
+const textarea = document.getElementById("textArea");
+
+function saveText(){
+  localStorage.setItem("mivo_pro_text", textarea.value);
+}
+
+function loadText(){
+  const saved = localStorage.getItem("mivo_pro_text");
+  if(saved){
+    textarea.value = saved;
+  }
+}
+
+textarea.addEventListener("input", saveText);
+
+/* Envoi mail */
 function sendEmail(){
   const recipient = document.getElementById("recipientEmail").value;
-  const message = document.getElementById("textArea").value;
+  const message = textarea.value;
 
   if(!recipient || !message){
     alert("Remplis tous les champs !");
@@ -109,11 +135,10 @@ function sendEmail(){
 
   const subject = "Message depuis MIVO Accès Pro";
   const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-
   window.location.href = mailtoLink;
 }
 
-/* Heure de Paris */
+/* Heure Paris */
 function updateClock(){
   const options = {
     timeZone: "Europe/Paris",
