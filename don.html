@@ -22,8 +22,8 @@
       height: 2px;
       background: white;
       border-radius: 50%;
-      opacity: 0.8;
-      animation: twinkle 2s infinite alternate;
+      opacity: 0.9;
+      animation: twinkle 4s infinite alternate;
     }
 
     @keyframes twinkle {
@@ -101,14 +101,14 @@
 
 <!-- Étoiles -->
 <script>
-  const stars = 100;
+  const stars = 300;
   for(let i=0;i<stars;i++){
     const star = document.createElement('div');
     star.className = 'star';
-    star.style.top = Math.random()*100+'%';
-    star.style.left = Math.random()*100+'%';
-    star.style.width = star.style.height = (Math.random()*2 + 1)+'px';
-    star.style.animationDuration = (Math.random()*3 + 2)+'s';
+    star.style.top = Math.random()*200+'%';
+    star.style.left = Math.random()*200+'%';
+    star.style.width = star.style.height = (Math.random()*3 + 2)+'px';
+    star.style.animationDuration = (Math.random()*4 + 3)+'s';
     document.body.appendChild(star);
   }
 </script>
@@ -130,9 +130,9 @@
   <h1>💙 Soutenir MIVO 💙</h1>
   <h2>Chaque don compte !</h2>
   <p>
-    Grâce à votre soutien, nous pouvons aider les jeunes victimes de harcèlement et de détresse mentale.
+    Grâce à votre soutien, nous pouvons aider les jeunes et les moin jeune victimes de harcèlement et de détresse mentale.
     Chaque contribution change une vie.  
-    Choisissez un montant ou donnez librement !
+    donnez un montant librement !
   </p>
 
   <!-- Compteur d'objectif -->
@@ -142,7 +142,7 @@
 
   <!-- Bouton PayPal -->
   <a id="paypalButton" class="btn-paypal" target="_blank">
-    Faire un don via PayPal
+    Faire un don 
   </a>
 
 </main>
