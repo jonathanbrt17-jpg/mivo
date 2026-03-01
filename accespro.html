@@ -66,7 +66,7 @@ button{
   display:none;
 }
 
-textarea{
+textarea.journalStyle{
   height:250px;
   font-family:'Great Vibes',cursive;
   font-size:22px;
@@ -81,6 +81,7 @@ textarea{
   <div class="clock" id="clock"></div>
 </div>
 
+<!-- LOGIN -->
 <div id="login" class="container">
   <h2>🔐 Accès Protégé</h2>
   <input type="password" id="password" placeholder="Mot de passe">
@@ -88,12 +89,15 @@ textarea{
   <button onclick="checkPassword()">Entrer</button>
 </div>
 
+<!-- MENU -->
 <div id="menu" class="container hidden">
   <h2>📂 Menu Pro</h2>
   <button onclick="openMail()">📧 Mail</button>
   <button onclick="openNotes()">📝 Notes</button>
+  <button onclick="openJournal()">📖 Journal</button>
 </div>
 
+<!-- MAIL -->
 <div id="mailSection" class="container hidden">
   <h2>📧 Envoyer un Mail</h2>
   <input type="email" id="toMail" placeholder="Mail du destinataire">
@@ -106,6 +110,7 @@ textarea{
   <button onclick="backMenu()">🔙 Retour</button>
 </div>
 
+<!-- NOTES -->
 <div id="notesSection" class="container hidden">
   <h2>📝 Notes Personnelles</h2>
   <textarea id="notes" placeholder="Écris tes notes ici..."></textarea>
@@ -114,17 +119,18 @@ textarea{
   <button onclick="backMenu()">🔙 Retour</button>
 </div>
 
-  <div id="notesSection" class="container hidden">
-  <h2>📝 Journal Intime </h2>
-  <textarea id="notes" placeholder="Écris se que tu ressens ici Mivo t'écoute..."></textarea>
+<!-- JOURNAL -->
+<div id="journalSection" class="container hidden">
+  <h2>📖 Journal Intime</h2>
+  <textarea id="journal" class="journalStyle" placeholder="Écris ce que tu ressens ici... Mivo t'écoute."></textarea>
   <br>
-  <button onclick="saveNotes()">💾 Sauvegarder</button>
+  <button onclick="saveJournal()">💾 Sauvegarder</button>
   <button onclick="backMenu()">🔙 Retour</button>
 </div>
 
 <script>
 
-// 🔐 MOT DE PASSE (tu peux le changer)
+// 🔐 MOT DE PASSE
 function checkPassword(){
   if(document.getElementById("password").value === "MIVO2026"){
     document.getElementById("login").classList.add("hidden");
@@ -134,7 +140,7 @@ function checkPassword(){
   }
 }
 
-// 📧 MAIL (ouvre application mail)
+// 📧 MAIL
 function sendMail(){
   let to = document.getElementById("toMail").value;
   let subject = document.getElementById("subjectMail").value;
@@ -143,14 +149,21 @@ function sendMail(){
   window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
 }
 
-// 📝 NOTES sauvegarde locale
+// 📝 NOTES
 function saveNotes(){
   localStorage.setItem("mivoNotes", document.getElementById("notes").value);
   alert("Notes sauvegardées !");
 }
 
+// 📖 JOURNAL
+function saveJournal(){
+  localStorage.setItem("mivoJournal", document.getElementById("journal").value);
+  alert("Journal sauvegardé !");
+}
+
 window.onload = function(){
   document.getElementById("notes").value = localStorage.getItem("mivoNotes") || "";
+  document.getElementById("journal").value = localStorage.getItem("mivoJournal") || "";
 }
 
 // 📂 Navigation
@@ -164,9 +177,15 @@ function openNotes(){
   document.getElementById("notesSection").classList.remove("hidden");
 }
 
+function openJournal(){
+  document.getElementById("menu").classList.add("hidden");
+  document.getElementById("journalSection").classList.remove("hidden");
+}
+
 function backMenu(){
   document.getElementById("mailSection").classList.add("hidden");
   document.getElementById("notesSection").classList.add("hidden");
+  document.getElementById("journalSection").classList.add("hidden");
   document.getElementById("menu").classList.remove("hidden");
 }
 
