@@ -36,7 +36,6 @@ body{
   border-radius:50%;
   animation: moveStar linear infinite;
 }
-
 @keyframes moveStar {
   0% {transform: translateY(0) translateX(0);}
   100% {transform: translateY(1000px) translateX(500px);}
@@ -125,10 +124,12 @@ textarea.journalStyle{
 <!-- MENU PRO -->
 <div id="menu" class="container hidden">
   <h2>📂 Menu Pro</h2>
+  <!-- Boutons du haut -->
   <div style="display:flex; justify-content:center; gap:20px; margin-bottom:40px;">
     <button onclick="openMail()">📧 Mail</button>
     <button onclick="openNotes()">📝 Notes</button>
   </div>
+  <!-- Bouton du bas -->
   <div style="display:flex; justify-content:center;">
     <button onclick="openJournal()">📖 Journal</button>
   </div>
@@ -196,12 +197,11 @@ function saveJournal(){
   alert("Journal sauvegardé !");
 }
 
-// LOAD LOCALSTORAGE
+// LOAD LOCALSTORAGE + Générer étoiles
 window.onload = function(){
   document.getElementById("notes").value = localStorage.getItem("mivoNotes") || "";
   document.getElementById("journal").value = localStorage.getItem("mivoJournal") || "";
 
-  // 🌟 Générer 100 étoiles aléatoires
   const starsContainer = document.getElementById("stars");
   for(let i=0;i<100;i++){
     const star = document.createElement("div");
