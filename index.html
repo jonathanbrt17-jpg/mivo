@@ -1,145 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MIVO — Accueil</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIVO — Maintenance</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    .box {
+      max-width: 600px;
+      padding: 35px;
+      background: #020617;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0,0,0,.7);
+    }
 
-body{
-  background:#000814;
-  color:white;
-  min-height:100vh;
-  overflow-x:hidden;
-}
+    h1 { color: #60a5fa; }
 
-.header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 50px;
-  background:#000814;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
+    .timer {
+      margin: 20px 0;
+      font-weight: bold;
+      color: #38bdf8;
+    }
 
-.logo{
-  width:60px;
-  background:#000814;
-  padding:5px;
-  border-radius:10px;
-}
-
-.header-text h1{color:#00c6ff;}
-.header-text p{color:#a0eaff;font-size:14px;}
-
-nav a{
-  color:white;
-  margin-left:20px;
-  text-decoration:none;
-  font-weight:600;
-}
-
-nav a:hover{color:#00c6ff;}
-
-main{
-  max-width:900px;
-  margin:80px auto;
-  padding:0 20px;
-}
-
-main h2{
-  text-align:center;
-  font-size:34px;
-  margin-bottom:40px;
-  color:#00c6ff;
-}
-
-.service-box{
-  background:rgba(0,198,255,0.08);
-  padding:20px;
-  border-radius:20px;
-  margin-bottom:20px;
-  border:1px solid #00c6ff55;
-  box-shadow:0 0 15px #00c6ff22;
-  transition:0.3s;
-}
-
-.service-box:hover{
-  transform:scale(1.02);
-  box-shadow:0 0 25px #00c6ff55;
-}
-
-.service-box ul{
-  margin-top:10px;
-  padding-left:20px;
-}
-
-.footer{
-  text-align:center;
-  padding:30px;
-  border-top:1px solid #00c6ff33;
-  color:#a0eaff;
-}
-</style>
-</head>
-
-<body>
-
-<header class="header">
-  <img src="mivo.png" alt="Logo MIVO" class="logo">
-  <div class="header-text">
-    <h1>MIVO</h1>
-    <p>Parler, c’est déjà guérir.</p>
-  </div>
-  <nav>
-    <a href="accespro.html"> Accès pro </a> 
-    <a href="apropos.html">À propos</a>
-    <a href="info.html">Info</a>
-    <a href="contact.html">Contact</a>
-    <a href="don.html">Faire un don</a>
-    <a href="urgence.html">⚠️ Urgence</a>
-  </nav>
-</header>
-
-<main>
-  <h2>Accueil</h2>
-
-  <div class="service-box">
-    <p>Tu sais pourquoi MIVO existe ?</p>
-  </div>
-
-  <div class="service-box">
-    <p>Non !</p>
-  </div>
-
-  <div class="service-box">
-    <p>
-      Bon, je te dis tout :  
-      MIVO a été créé pour t’aider et te soutenir.  
-      Nous comprenons ta douleur, et nous savons que parfois la vie est compliquée, que ce n’est pas facile,  
-      et que tu as envie d’abandonner ou d’en finir.  
-      Mais nous sommes là pour toi, pour te rappeler qu’il existe des solutions et que tu n’es pas seul.
-    </p>
-  </div>
-
-  <div class="service-box">
-    <p>
-      Dès que tu en as besoin, viens nous écrire ou nous appeler.  
-      Ça fait toujours du bien d’être compris et aimé.
-    </p>
-  </div>
-
-</main>
-
-<footer class="footer">
-<p> © 2025 - MIVO. Tous droits réservés. No partenaire loading... <p/> 
-</footer>
-
-</body>
-</html>
+    
